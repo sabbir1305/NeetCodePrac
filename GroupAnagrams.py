@@ -24,3 +24,10 @@ class Solution:
             
             res[tuple(count)].append(str)
         return res.values() 
+    
+            
+    
+    
+sl = Solution()
+strs = ["eat","tea","tan","ate","nat","bat"]
+print(sl.groupAnagrams(strs))

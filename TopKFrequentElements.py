@@ -18,6 +18,25 @@ class Solution:
                 res.append(n)
                 if len(res) == k:
                     return res
+                
+        def topKFrequent2(self, nums: List[int], k: int) -> List[int]:
+            numOfCourrencesCount = {}
+            freq = [[] for i in range(len(nums) + 1)]
+            
+            for n in nums:
+                numOfCourrencesCount[n]  = 1 + numOfCourrencesCount.get(n,0)
+            for k,v in numOfCourrencesCount:
+                freq[v].append(k)
+            res = []
+            
+            for i  in range(len(freq)-1,0,-1):
+                for n in freq[i]:
+                    res.append(n)
+                    if len(res)== k :
+                        return res
+
+                
+            
 
 sln = Solution()
 nums = [1,1,1,2,2,3]
