@@ -13,18 +13,17 @@ class Solution:
         #         r += 1
         #     i += 1
         #sreturn res
-        l=0
-        r=len(height)-1
-        maxAr=0
-        
-        while(l<r):
-            maxAr=max(maxAr,min(height[l],height[r])*(r-l))
-            
-            if(height[l]<height[r]):
-                l+=1
+        l,r = 0, len(height) - 1
+        maxArea = 0
+        while l<r:
+            maxArea = max(maxArea, (r-l) * min(height[l],height[r]))
+            if height[l] < height[r]:
+                l += 1
             else:
-                r-=1
-        return maxAr
+                r -= 1
+        return maxArea
+            
+        
             
         
 sln = Solution()
